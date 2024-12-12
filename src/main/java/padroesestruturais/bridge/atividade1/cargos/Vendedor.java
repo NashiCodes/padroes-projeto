@@ -14,6 +14,9 @@ public class Vendedor extends Cargo {
     }
 
     public String CancelarVenda() {
+        if (this.numeroVendas == 0) {
+            return "Não há vendas para cancelar";
+        }
         this.numeroVendas--;
         return this.servicosPrestados.get("Venda").cancelar();
     }
@@ -24,6 +27,9 @@ public class Vendedor extends Cargo {
     }
 
     public String CancelarTroca() {
+        if (this.numeroTrocas == 0) {
+            return "Não há trocas para cancelar";
+        }
         this.numeroTrocas--;
         return this.servicosPrestados.get("Troca").cancelar();
     }

@@ -14,6 +14,9 @@ public class Faxineira extends Cargo {
     }
 
     public String CancelarFaxina() {
+        if (this.FaxinasFeitas == 0) {
+            return "Não há faxinas para cancelar";
+        }
         this.FaxinasFeitas--;
         return this.servicosPrestados.get("Limpeza").cancelar();
     }

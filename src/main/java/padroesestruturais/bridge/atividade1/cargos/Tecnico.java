@@ -20,11 +20,17 @@ public class Tecnico extends Cargo {
     }
 
     public String CancelarVenda() {
+        if (this.numVendas == 0) {
+            return "Não há vendas para cancelar";
+        }
         this.numVendas--;
         return this.servicosPrestados.get("Venda").cancelar();
     }
 
     public String CancelarReparo() {
+        if (this.numReparos == 0) {
+            return "Não há reparos para cancelar";
+        }
         this.numReparos--;
         return this.servicosPrestados.get("Reparo").cancelar();
     }

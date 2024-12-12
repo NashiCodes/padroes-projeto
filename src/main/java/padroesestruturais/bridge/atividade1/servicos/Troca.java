@@ -3,7 +3,7 @@ package padroesestruturais.bridge.atividade1.servicos;
 public class Troca implements IServico {
     @Override
     public String executar() {
-        return "Troca efetivada";
+        return "Troca feita com sucesso";
     }
 
     @Override

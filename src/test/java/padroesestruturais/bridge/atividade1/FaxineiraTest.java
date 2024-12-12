@@ -14,8 +14,15 @@ class FaxineiraTest {
     }
 
     @Test
+    public void deveRetornarSemFaxinaParaCancelar() {
+        Faxineira faxineira = new Faxineira();
+        assertEquals("Não há faxinas para cancelar", faxineira.CancelarFaxina());
+    }
+
+    @Test
     public void deveRetornarLimpezaCancelada() {
         Faxineira faxineira = new Faxineira();
+        faxineira.Limpar();
         assertEquals("Limpeza cancelada", faxineira.CancelarFaxina());
     }
 

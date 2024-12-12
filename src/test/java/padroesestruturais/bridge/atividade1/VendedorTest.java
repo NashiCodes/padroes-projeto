@@ -14,9 +14,9 @@ class VendedorTest {
     }
 
     @Test
-    public void deveRetornarVendaCancelada() {
+    public void deveRetornarSemVendaParaCancelar() {
         Vendedor vendedor = new Vendedor();
-        assertEquals("Venda cancelada", vendedor.CancelarVenda());
+        assertEquals("Não há vendas para cancelar", vendedor.CancelarVenda());
     }
 
     @Test
@@ -26,9 +26,9 @@ class VendedorTest {
     }
 
     @Test
-    public void deveRetornarTrocaCancelada() {
+    public void deveRetornarSemTrocaParaCancelar() {
         Vendedor vendedor = new Vendedor();
-        assertEquals("Troca cancelada", vendedor.CancelarTroca());
+        assertEquals("Não há trocas para cancelar", vendedor.CancelarTroca());
     }
 
     @Test
@@ -41,14 +41,14 @@ class VendedorTest {
     public void deveRetornarSalarioComAcrescimoDeVenda() {
         Vendedor vendedor = new Vendedor();
         vendedor.RealizarVenda();
-        assertEquals(1210.0f, vendedor.calcularSalario());
+        assertEquals(1650.0f, vendedor.calcularSalario());
     }
 
     @Test
     public void deveRetornarSalarioComAcrescimoDeTroca() {
         Vendedor vendedor = new Vendedor();
         vendedor.RealizarTroca();
-        assertEquals(1210.0f, vendedor.calcularSalario());
+        assertEquals(1320.0f, vendedor.calcularSalario());
     }
 
     @Test
@@ -56,7 +56,7 @@ class VendedorTest {
         Vendedor vendedor = new Vendedor();
         vendedor.RealizarVenda();
         vendedor.RealizarTroca();
-        assertEquals(1321.0f, vendedor.calcularSalario());
+        assertEquals(1870.0f, vendedor.calcularSalario());
     }
 
     @Test
@@ -65,7 +65,7 @@ class VendedorTest {
         vendedor.RealizarVenda();
         vendedor.RealizarTroca();
         vendedor.CancelarVenda();
-        assertEquals(1210.0f, vendedor.calcularSalario());
+        assertEquals(1320.0f, vendedor.calcularSalario());
     }
 
     @Test
@@ -74,7 +74,7 @@ class VendedorTest {
         vendedor.RealizarVenda();
         vendedor.RealizarTroca();
         vendedor.CancelarTroca();
-        assertEquals(1210.0f, vendedor.calcularSalario());
+        assertEquals(1650.0f, vendedor.calcularSalario());
     }
 
     @Test
@@ -100,6 +100,6 @@ class VendedorTest {
         vendedor.RealizarTroca();
         vendedor.CancelarVenda();
         vendedor.CancelarTroca();
-        assertEquals(1210.0f, vendedor.calcularSalario());
+        assertEquals(1100.0f, vendedor.calcularSalario());
     }
 }

@@ -14,6 +14,9 @@ public class Recrutador extends Cargo {
     }
 
     public String CancelarContratacao() {
+        if (this.numeroContratacoes == 0) {
+            return "Não há contratações para cancelar";
+        }
         this.numeroContratacoes--;
         return this.servicosPrestados.get("Contratacao").cancelar();
     }
@@ -24,6 +27,9 @@ public class Recrutador extends Cargo {
     }
 
     public String CancelarDemissao() {
+        if (this.numeroDemissoes == 0) {
+            return "Não há demissões para cancelar";
+        }
         this.numeroDemissoes--;
         return this.servicosPrestados.get("Demissao").cancelar();
     }
@@ -32,6 +38,9 @@ public class Recrutador extends Cargo {
         float comissaoContratacoes = this.numeroContratacoes * this.servicosPrestados.get("Contratacao").percentualAcrescimo();
         float comissaoDemissoes = this.numeroDemissoes * this.servicosPrestados.get("Demissao").percentualAcrescimo();
         float comissaoTotal = comissaoContratacoes - comissaoDemissoes;
+        if (comissaoTotal < 0) {
+            comissaoTotal = 0;
+        }
         return this.salarioBase * (1 + comissaoTotal);
     }
 }
