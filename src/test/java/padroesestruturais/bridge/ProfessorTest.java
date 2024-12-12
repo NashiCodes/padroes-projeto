@@ -2,9 +2,7 @@ package padroesestruturais.bridge;
 
 import org.junit.jupiter.api.Test;
 
-import javax.swing.plaf.basic.BasicGraphicsUtils;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProfessorTest {
 

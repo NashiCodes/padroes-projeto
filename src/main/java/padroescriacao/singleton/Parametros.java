@@ -2,14 +2,17 @@ package padroescriacao.singleton;
 
 public class Parametros {
 
-    private Parametros() {};
-    private static Parametros instance = new Parametros();
-    public static Parametros getInstance() {
-        return instance;
-    }
+    private static final Parametros instance = new Parametros();
 
     private String nomeEscola;
     private String usuarioLogado;
+
+    private Parametros() {
+    }
+
+    public static Parametros getInstance() {
+        return instance;
+    }
 
     public String getNomeEscola() {
         return nomeEscola;
